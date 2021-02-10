@@ -28,15 +28,15 @@
 			<div class="card card-primary card-outline col-md-10 mr-3">
 				<div class="card-header">
 					<h3 class="card-title">Profil Perusahaan</h3>
-					@if(auth()->check())
 					<div class="card-tools">
+            @if(auth()->check())
             <button type="button" class="btn btn-tool"><i class="fas fa-edit"></i>
             </button>
+            @endif
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
           </div>
-          @endif
-          <button type="button" class="btn btn-tool" data-card-widget="collapse">
-            <i class="fas fa-minus"></i>
-          </button>
 				</div>
 				<div class="card-body">
 					<p>PT Armada Laju Mas adalah perusahaan yang bergerak dibidang ekspedisi kargo yang mempunyai Visi dan Misi :</p>
@@ -69,7 +69,7 @@
 			<div class="col-md-12">
 				<div class="card-group mb-4 row">
 					@foreach($pegawai as $p)
-					<div class="card card-primary col-6 col-md-2 p-0 mr-0 mr-md-3 elevation-3">
+					<div class="card card-primary col-12 col-md-2 p-0 mr-0 mr-md-3 elevation-3">
 						<div class="card-header">
 							<h3 class="card-title">{{Str::title($p->jabatan)}}</h3>							
 						</div>

@@ -25,6 +25,12 @@ Route::get('/hubungi', [\App\Http\Controllers\HubungiController::class, 'hubungi
 Route::get('/gallery', [\App\Http\Controllers\GalleryController::class, 'gallery']);
 Route::get('/brosur', [\App\Http\Controllers\BrosurController::class, 'brosur']);
 Route::get('/darat', [\App\Http\Controllers\ServiceController::class, 'darat']);
+Route::get('/laut', [\App\Http\Controllers\ServiceController::class, 'laut']);
+Route::get('/udara', [\App\Http\Controllers\ServiceController::class, 'udara']);
+Route::get('/pickup', [\App\Http\Controllers\ServiceController::class, 'pickup']);
+Route::get('/harga', [\App\Http\Controllers\PesanController::class, 'harga']);
+
+Route::get('/syarat', [\App\Http\Controllers\SyaratController::class, 'syarat']);
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/tambahpegawai', [\App\Http\Controllers\TentangController::class, 'tambahpegawai']);

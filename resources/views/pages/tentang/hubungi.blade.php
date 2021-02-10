@@ -24,67 +24,71 @@
 <!-- /.content-header -->
 <div class="content">
 	<div class="container" style="max-width: 1280px;">
-		<div class="card-group mb-4 row">			
-			<div class="card card-primary card-outline col-md-10 mr-3">
-				<div class="card-header">
-					<h3 class="card-title">Hubungi Kami</h3>
-					@if(auth()->check())
-					<div class="card-tools">
-            <button type="button" class="btn btn-tool"><i class="fas fa-edit"></i>
-            </button>
+		<div class="row">
+      <div class="col-md-10">
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">Hubungi Kami</h3>					
+            <div class="card-tools">
+              @if(auth()->check())
+              <button type="button" class="btn btn-tool"><i class="fas fa-edit"></i>
+              </button>
+              @endif
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
           </div>
-          @endif
-          <button type="button" class="btn btn-tool" data-card-widget="collapse">
-            <i class="fas fa-minus"></i>
-          </button>
-				</div>
-				<div class="card-body">
-					<div class="row">
-						<div class="col-md-12">
-							<h3><i class="fas fa-home"></i></h3>
-							<p>{!!$perusahaan->alamat!!}</p>
-						</div>
-						<div class="col-md-12">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7032239811124!2d106.8608177141722!3d-6.302669863435891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed8189a44735%3A0xd58d8468969b08d1!2sJl.+Term.+Simatupang+No.40%2C+Gedong%2C+Ps.+Rebo%2C+Kota+Jakarta+Timur%2C+Daerah+Khusus+Ibukota+Jakarta+13760!5e0!3m2!1sen!2sid!4v1534323284451" width="600" height="250" frameborder="0" style="border:1px solid silver;" allowfullscreen></iframe>
-						</div>
-						<div class="col-md-12 mb-2">
-							<table>
-								<tr>
-									<td><i class="fas fa-phone"></i></td>
-									<td><a href="tel:{{$perusahaan->telepon}}" style="margin-left: 20px" target="_blank"><u>{{$perusahaan->telepon}}</u></a></td>
-								</tr>
-								<tr>
-									<td><i class="fab fa-whatsapp"></i></td>
-									<td><a href="https://api.whatsapp.com/send?phone={{$perusahaan->whatsapp}}&text=Salam%20...%20" style="margin-left: 20px" target="_blank"><u>+{{$perusahaan->whatsapp}}</u></a></td>
-								</tr>
-							</table>
-						</div>
-						<div class="col-md-12">
-							<table>
-								<tr>
-									<td rowspan="100%" style="vertical-align: top;width: 40px;"><i class="fas fa-envelope"></i></td>
-									@foreach($pegawai as $p)
-									<td><a href="mailto:{{$p->user->email}}"><u>{{$p->user->email}}</u></a></td>									
-								</tr>
-									@endforeach
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card card-primary card-outline col-md-2">
-				<div class="card-header">
-					<h3 class="card-title">Hubungi Kami</h3>
-				</div>
-				<div class="card-body px-1">
-					<a href="/tentang" class="dropdown-item">Tentang Perusahaan</a>
-					<div class="dropdown-divider"></div>
-					<a href="/brosur" class="dropdown-item">Kirim Brosur</a>
-					<div class="dropdown-divider"></div>
-					<a href="/pesan" class="dropdown-item">Pesan Jasa</a>
-					<div class="dropdown-divider"></div>
-				</div>
-			</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <h3><i class="fas fa-home"></i></h3>
+                <p>{!!$perusahaan->alamat!!}</p>
+              </div>
+              <div class="col-md-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7032239811124!2d106.8608177141722!3d-6.302669863435891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed8189a44735%3A0xd58d8468969b08d1!2sJl.+Term.+Simatupang+No.40%2C+Gedong%2C+Ps.+Rebo%2C+Kota+Jakarta+Timur%2C+Daerah+Khusus+Ibukota+Jakarta+13760!5e0!3m2!1sen!2sid!4v1534323284451" width="600" height="250" frameborder="0" style="border:1px solid silver;" allowfullscreen></iframe>
+              </div>
+              <div class="col-md-12 mb-2">
+                <table>
+                  <tr>
+                    <td><i class="fas fa-phone"></i></td>
+                    <td><a href="tel:{{$perusahaan->telepon}}" style="margin-left: 20px" target="_blank"><u>{{$perusahaan->telepon}}</u></a></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fab fa-whatsapp"></i></td>
+                    <td><a href="https://api.whatsapp.com/send?phone={{$perusahaan->whatsapp}}&text=Salam%20...%20" style="margin-left: 20px" target="_blank"><u>+{{$perusahaan->whatsapp}}</u></a></td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-md-12">
+                <table>
+                  <tr>
+                    <td rowspan="100%" style="vertical-align: top;width: 40px;"><i class="fas fa-envelope"></i></td>
+                    @foreach($pegawai as $p)
+                    <td><a href="mailto:{{$p->user->email}}"><u>{{$p->user->email}}</u></a></td>									
+                  </tr>
+                    @endforeach
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>			
+			<div class="col-md-2">
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">Hubungi Kami</h3>
+          </div>
+          <div class="card-body px-1">
+            <a href="/tentang" class="dropdown-item">Tentang Perusahaan</a>
+            <div class="dropdown-divider"></div>
+            <a href="/brosur" class="dropdown-item">Kirim Brosur</a>
+            <div class="dropdown-divider"></div>
+            <a href="/pesan" class="dropdown-item">Pesan Jasa</a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </div>
+      </div>
 		</div>		
 	</div>
 </div>
